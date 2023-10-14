@@ -1,7 +1,13 @@
+import HomePage from "./components/HomePage";
+import Navbar from "./components/Navbar";
+
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold">
-      Welcome to AnyHelp 
-    </h1>
+    <>
+      <Navbar/>
+      <HomePage/>
+      <h1 className="text-3xl font-bold">
+      </h1>
+    </>
   )
 }
