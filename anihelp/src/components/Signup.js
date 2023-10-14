@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword,updateProfile  } from "firebase/auth";
 import InputControl from './InputControl';
 import { auth } from '../firebase.config';
 import { useState } from 'react';
+import inputWarning from './img/inputWarning.png';
 
 function Signup() {
     const navigate = useNavigate();
@@ -139,7 +140,7 @@ function Signup() {
         {values.image_url.length !== 0 ? (
           <img src={values.image_url}  alt="user image" />
         ) : (
-          <img src="https://picturesofmaidenhead.files.wordpress.com/2019/01/image-not-found.jpg?w=1620" alt="image not found" />
+          <img src={inputWarning} alt="image not found" />
         )}
 
 
