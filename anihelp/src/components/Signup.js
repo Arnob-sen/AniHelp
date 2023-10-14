@@ -17,13 +17,15 @@ function Signup() {
       session:"",
       phone:"",
       bio:"",
+      fee:"",
+      image_url:""
       
     });
     const [errorMsg, setErrorMsg] = useState("");
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
   
     const handleSubmission = () => {
-      if (!values.name || !values.email || !values.pass||!values.Institute||!values.bio||!values.degree||!values.phone||!values.reg_no||!values.session) {
+      if (!values.name || !values.email || !values.pass||!values.Institute||!values.bio||!values.degree||!values.phone||!values.reg_no||!values.session||!values.fee||!values.image_url) {
         setErrorMsg("Fill all fields");
         return;
       }
@@ -37,15 +39,16 @@ function Signup() {
           await updateProfile(user, {
             displayName: values.name,
           });
-          navigate("/");
+          navigate("/login");
         })
         .catch((err) => {
           setSubmitButtonDisabled(false);
           setErrorMsg(err.message);
         });
-    };
-  return (
-    <div>
+      };
+      return (
+        <div className="mt-80">
+    <div  className="mt-48">
         {/* <Link to="/" className="text-left text-3xl text-red-900">go Home</Link> */}
         <div className="mt-48">
                   <div className="flex flex-col items-center justify-center h-screen bg-white ">
@@ -65,13 +68,7 @@ function Signup() {
             setValues((prev) => ({ ...prev, email: event.target.value }))
           }
         />
-        <InputControl
-          label="Password"
-          placeholder="Enter password"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, pass: event.target.value }))
-          }
-        />
+       
          <InputControl
           label="Degree"
           placeholder="Enter degree"
@@ -116,6 +113,37 @@ function Signup() {
             setValues((prev) => ({ ...prev, bio: event.target.value }))
           }
         />
+        <InputControl
+          label="Fee"
+          placeholder="Enter your fee"
+          onChange={(event) =>
+            setValues((prev) => ({ ...prev, fee: event.target.value }))
+          }
+        />
+         
+         <InputControl
+          label="Password"
+          placeholder="Enter password"
+          onChange={(event) =>
+            setValues((prev) => ({ ...prev, pass: event.target.value }))
+          }
+        />
+        <InputControl
+          label="Image Url"
+          placeholder="Enter image URL"
+          onChange={(event) =>
+            setValues((prev) => ({ ...prev, image_url: event.target.value }))
+          }
+        />
+        <div className="flex justify-center py-4 h-52">
+        {values.image_url.length !== 0 ? (
+          <img src={values.image_url}  alt="user image" />
+        ) : (
+          <img src="https://picturesofmaidenhead.files.wordpress.com/2019/01/image-not-found.jpg?w=1620" alt="image not found" />
+        )}
+
+
+        </div>
         <b className="text-red-600">{errorMsg}</b>
         <br />
         {/* <Link to="/" className="mx-2 bg-red-600 text-white p-2 rounded-md">Back</Link> */}
@@ -125,7 +153,13 @@ function Signup() {
           </button>
           </Link>
            <button className="my-2 bg-blue-600 text-white p-2 rounded-md ring-1" disabled={submitButtonDisabled} onClick={handleSubmission}>
-            Signup
+           {errorMsg == null ? (
+    <Link to="/login">
+      Signup
+    </Link>
+  ) : (
+    'Signup'
+  )}
           </button>
           
           <p>
@@ -134,6 +168,7 @@ function Signup() {
               <Link to="/login">Log in</Link>
             </span>
           </p>
+    </div>
     </div>
     </div>
     </div>
