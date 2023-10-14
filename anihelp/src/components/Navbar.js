@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function Navbar() {
     const [isConsultancyDropdownOpen, setConsultancyDropdownOpen] = useState(false);
-    const [isNavbarOpen, setNavbarOpen] = useState(false);
+    const [isNavbarOpen, setNavbarOpen] = useState(true);
 
     const toggleNavbar = () => {
         setNavbarOpen(!isNavbarOpen);
@@ -41,7 +41,7 @@ function Navbar() {
                 </button>
                 {isConsultancyDropdownOpen && (
                   <div className="absolute z-10 mt-2 space-y-2 bg-white border border-gray-200 rounded-md shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                    <p className="text-gray-100 px-4 py-2">Select Animal</p>
+                    <p className="px-4 py-2 text-gray-700 dark:text-white">Select Animal</p>
                     <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                     POULTRY
                     </a>
