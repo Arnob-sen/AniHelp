@@ -9,18 +9,10 @@ import Input from "./components/Input";
 import Output from "./components/Output";
 import MedicinePage from "./components/MedicinePage";
 import FoodPage from "./components/FoodPage";
+import Symtoms from "./components/Symtoms";
 
 
 export default function App() {
-  // function onCreateUser(user){
-  //   fetch('https://fir-anihelp-default-rtdb.asia-southeast1.firebasedatabase.app/users.json',{
-  //     method: 'POST',
-  //     body: JSON.stringify()
-  //   })
-  //   .then((resp)=>{
-  //     console.log(resp);
-  //   })
-  // }
   return (
     <BrowserRouter>
       <Navbar/>
@@ -37,6 +29,7 @@ export default function App() {
         <Route path="/other" element={<Output tar={4}/>}/>
         <Route path="/medicine" element={<MedicinePage/>}/>
         <Route path="/food" element={<FoodPage/>}/>
+        <Route path="/symtoms" element={<Symtoms/>}/>
       
       
       </Routes>
