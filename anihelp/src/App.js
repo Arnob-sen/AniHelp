@@ -7,6 +7,8 @@ import Login from "./components/Login";
 import Footer from "./components/Footer";
 import Input from "./components/Input";
 import Output from "./components/Output";
+import MedicinePage from "./components/MedicinePage";
+import FoodPage from "./components/FoodPage";
 
 
 export default function App() {
@@ -33,6 +35,8 @@ export default function App() {
         <Route path="/cattle" element={<Output tar={2}/>}/>
         <Route path="/fish" element={<Output tar={3}/>}/>
         <Route path="/other" element={<Output tar={4}/>}/>
+        <Route path="/medicine" element={<MedicinePage/>}/>
+        <Route path="/food" element={<FoodPage/>}/>
       
       
       </Routes>
