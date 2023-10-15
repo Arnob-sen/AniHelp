@@ -9,12 +9,17 @@ import dogImg from './img/dog.png'
 import fishImg from './img/fish.png'
 import horseImg from './img/horse.png'
 import rabbitImg from './img/rabbit.png'
+import Hr from './Hr'
+import Carousel from './Carousel'
+import NewsLetter from './NewsLetter'
 
 function HomePage() {
   return (
     <>
-        <img class="h-2/3 w-full" src={cover} alt="Cover "/>
-        <h4 class="py-4 flex justify-center items-center mb-2 text-4xl font-bold tracking-tight text-gray-900 hover:underline dark:text-white dark:hover:underline">Select Animal Category</h4>
+        <img class="h-2/3 w-full my-4" src={cover} alt="Cover "/>
+        <Hr value={4}/>
+        <h4 class="flex justify-center items-center mb-2 text-4xl font-bold tracking-tight text-gray-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400">Select Animal Category</h4>
+        <Hr value={4}/>
         <div className="grid grid-cols-3 gap-4 px-3 py-4">
             <a href='/'>
                 <ConsultancyCard title="POULTRY" photo={poultryImg} info="For Colibacillosis (Coliform infections, Mycoplasmosis, Fowl Cholera, Necrotic Enteritis, Ulcerative Enteritis (Quail disease), Pullorum Disease, Fowl Typhoid, Botulism etc diseases."/>
@@ -42,6 +47,13 @@ function HomePage() {
             </a>
 
         </div>
+        <Hr value={4}/>
+        <h4 class="flex justify-center items-center mb-2 text-4xl font-bold tracking-tight text-gray-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400">News</h4>
+        <Hr value={4}/>
+        <Carousel/>
+        <Hr value={4}/>
+        <NewsLetter/>
+        <Hr value={4}/>
     </>
   )
 }

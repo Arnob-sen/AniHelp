@@ -138,7 +138,7 @@ function Signup() {
         />
         <div className="flex justify-center py-4 h-52">
         {values.image_url.length !== 0 ? (
-          <img src={values.image_url}  alt="user image" />
+          <img src={values.image_url}  alt="Image Not Found" />
         ) : (
           <img src={inputWarning} alt="image not found" />
         )}

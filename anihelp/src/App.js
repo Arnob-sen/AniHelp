@@ -4,6 +4,7 @@ import React from "react";
 import { Route,Routes,BrowserRouter } from "react-router-dom";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Footer from "./components/Footer";
 
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
       </Routes>
       {/* <Navbar/> */}
       {/* <HomePage/> */}
+      <Footer/>
     </>
     </BrowserRouter>
   )
