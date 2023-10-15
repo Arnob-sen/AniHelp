@@ -16,7 +16,7 @@ function ExpertCard(props) {
   
     return (
       <div
-        className="flex justify-center my-4 flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+        className="flex justify-center m-4 flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
       >
         <img
           className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
@@ -34,7 +34,12 @@ function ExpertCard(props) {
             Specialize: {specialization}
           </p>
         </div>
-        <h4 className='flex justify-center items-center mb-2 text-4xl font-bold tracking-tight text-gray-900 hover:text-red-600'>{props.fee}+VAT</h4>
+        <div className=''>
+          <h4 className='flex items-center mb-2 text-4xl font-bold tracking-tight text-gray-900 hover:text-red-600'>{props.fee}/=</h4>
+        <button className='flex justify-center bg-red-600 text-white px-4 py-2 rounded'>Contact</button>
+        </div>
+        <div>
+        </div>
       </div>
     );
   }
